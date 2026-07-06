@@ -1,22 +1,22 @@
 #=
-Julia implementation of the Victor-Purpura metric from 
+Julia implementation of the Victor-Purpura metric from
 Victor & Purpura (1997), [Metric-space analysis of spike trains: theory, algorithms and application](https://arxiv.org/abs/q-bio/0309031)
 implementation by Jake Witter
 =#
 export victor_purpura
 
 """
-    victor_purpura(u, v, q)
+    victor_purpura(u, v, q) -> d
 
-Calculate the Victor-Purpura distance [1] between spike trains u, v, with time 
-scale parameter q. This is computed via the dynamic programming algorithm of 
-equation (4), applied to spike times rather than intervals, as in the 
-"Distances based on spike times" section. It uses insertion and deletion costs 
+Calculate the Victor-Purpura distance [1] between spike trains `u, v`, with time
+scale parameter `q`. This is computed via the dynamic programming algorithm of
+equation (4), applied to spike times rather than intervals, as in the
+"Distances based on spike times" section. It uses insertion and deletion costs
 of 1.
 
-u, v are expected to be 1D sorted vectors listing the times of spikes.
+`u, v` are expected to be 1D sorted vectors listing the times of spikes.
 
-[1] : Victor & Purpura (1997), Metric-space analysis of spike trains: theory, 
+[1] : Victor & Purpura (1997), Metric-space analysis of spike trains: theory,
 algorithms, and application
 """
 function victor_purpura(u::AbstractVector{T1}, v::AbstractVector{T2}, q::Real) where {T1,T2}
