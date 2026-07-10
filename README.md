@@ -18,6 +18,7 @@ These are the exported functions from `SpikeSynchrony`. See their documentation 
 vanRossum # the van Rossum distance
 SPIKE_distance # self-explanatory
 SPIKE_distance_profile # the function S(t)
+victor_purpura # the Victor-Purpura distance
 ```
 
 ## Related software
